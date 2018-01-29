@@ -1,0 +1,13 @@
+Script started on Thu 23 Mar 2017 08:10:11 PM EDT
+hkocabas@js-156-93:~/assignment2/submitted$ as part1.s -o part1.o
+hkocabas@js-156-93:~/assignment2/submitted$ ld part1.o -o part1
+hkocabas@js-156-93:~/assignment2/submitted$ ./part1
+$ pwd
+/home/hkocabas/assignment2/submitted
+$ ls
+part1  part1.o	part1.s  typescript
+$ exit
+hkocabas@js-156-93:~/assignment2/submitted$ exit
+exit
+
+Script done on Thu 23 Mar 2017 08:10:57 PM EDT

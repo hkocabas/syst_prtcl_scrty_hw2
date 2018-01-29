@@ -1,0 +1,87 @@
+Script started on Mon 27 Mar 2017 01:09:59 AM EDT
+hkocabas@js-156-93:~/testassignment2/part3b/submitter3b$ gcc Part3b.c -o Part3b
+Part3b.c: In function ‘dumb’:
+Part3b.c:42:11: warning: assignment makes integer from pointer without a cast [enabled by default]
+      *hold=filename;
+           ^
+Part3b.c: In function ‘main’:
+Part3b.c:60:7: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘size_t’ [-Wformat=]
+       printf("\\Length of Input String:%d\\", strlen(string));
+       ^
+hkocabas@js-156-93:~/testassignment2/part3b/submitter3b$ ./Part3b filename.txt
+\Length of Input String:12\
+Value of Test:7ffd4cd50548
+Value of filename[0]:7ffd4cd50550
+The attack buffer is going to need to be a little bit bigger than:ffff8002b32afab0
+hkocabas@js-156-93:~/testassignment2/part3b/submitter3b$ 
+hkocabas@js-156-93:~/testassignment2/part3b/submitter3b$ 
+hkocabas@js-156-93:~/testassignment2/part3b/submitter3b$ 
+hkocabas@js-156-93:~/testassignment2/part3b/submitter3b$ gcc -fno-stack-protector Part3b.c -o Part3b
+Part3b.c: In function ‘dumb’:
+Part3b.c:42:11: warning: assignment makes integer from pointer without a cast [enabled by default]
+      *hold=filename;
+           ^
+Part3b.c: In function ‘main’:
+Part3b.c:60:7: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘size_t’ [-Wformat=]
+       printf("\\Length of Input String:%d\\", strlen(string));
+       ^
+hkocabas@js-156-93:~/testassignment2/part3b/submitter3b$ ./Part3b filename.txt
+\Length of Input String:12\
+Value of Test:7ffc86f67928
+Value of filename[0]:7ffc86f67520
+The attack buffer is going to need to be a little bit bigger than:ffffff1d8884eca8
+Segmentation fault (core dumped)
+hkocabas@js-156-93:~/testassignment2/part3b/submitter3b$ 
+hkocabas@js-156-93:~/testassignment2/part3b/submitter3b$ 
+hkocabas@js-156-93:~/testassignment2/part3b/submitter3b$ 
+hkocabas@js-156-93:~/testassignment2/part3b/submitter3b$ 
+hkocabas@js-156-93:~/testassignment2/part3b/submitter3b$ 
+hkocabas@js-156-93:~/testassignment2/part3b/submitter3b$ gcc -z execstack Part3b.c -o Part3b
+Part3b.c: In function ‘dumb’:
+Part3b.c:42:11: warning: assignment makes integer from pointer without a cast [enabled by default]
+      *hold=filename;
+           ^
+Part3b.c: In function ‘main’:
+Part3b.c:60:7: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘size_t’ [-Wformat=]
+       printf("\\Length of Input String:%d\\", strlen(string));
+       ^
+hkocabas@js-156-93:~/testassignment2/part3b/submitter3b$ ./Part3b filename.txt
+\Length of Input String:12\
+Value of Test:7fffba43b258
+Value of filename[0]:7fffba43b260
+The attack buffer is going to need to be a little bit bigger than:ffff800045bc4da0
+hkocabas@js-156-93:~/testassignment2/part3b/submitter3b$ 
+hkocabas@js-156-93:~/testassignment2/part3b/submitter3b$ 
+hkocabas@js-156-93:~/testassignment2/part3b/submitter3b$ 
+hkocabas@js-156-93:~/testassignment2/part3b/submitter3b$ 
+hkocabas@js-156-93:~/testassignment2/part3b/submitter3b$ gcc -z execstack -fno-stack-protector Part3b.c -o Part3b
+Part3b.c: In function ‘dumb’:
+Part3b.c:42:11: warning: assignment makes integer from pointer without a cast [enabled by default]
+      *hold=filename;
+           ^
+Part3b.c: In function ‘main’:
+Part3b.c:60:7: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘size_t’ [-Wformat=]
+       printf("\\Length of Input String:%d\\", strlen(string));
+       ^
+hkocabas@js-156-93:~/testassignment2/part3b/submitter3b$ ./Part3b filename.txt
+\Length of Input String:12\
+Value of Test:7ffdc950ceb8
+Value of filename[0]:7ffdc950cab0
+The attack buffer is going to need to be a little bit bigger than:ffffff095cf30718
+$ 
+$ 
+$ 
+$ pwd
+/home/hkocabas/testassignment2/part3b/submitter3b
+$ 
+$ date
+Mon Mar 27 01:13:24 EDT 2017
+$ 
+$ 
+$ exit
+hkocabas@js-156-93:~/testassignment2/part3b/submitter3b$ 
+hkocabas@js-156-93:~/testassignment2/part3b/submitter3b$ 
+hkocabas@js-156-93:~/testassignment2/part3b/submitter3b$ exit
+exit
+
+Script done on Mon 27 Mar 2017 01:13:31 AM EDT

@@ -1,0 +1,16 @@
+---Collaborators---
+
+Course Piazza Link and the questons has been read to get info:
+https://iu.instructure.com/courses/1603906/external_tools/58924
+
+For Part 2, in addition to piazza, the below link has been used to remove 00 values inside of my shell code.
+http://stackoverflow.com/questions/4391840/how-to-remove-null-00-from-machine-code
+
+For Part 3a, the following website has been read to explain mprotect() function.
+http://www.tutorialspoint.com/unix_system_calls/mprotect.htm
+
+For Part 3b, the followinfg website has been referenced to remove last 0 value inside of our path:"/bin/ssh\0"
+https://en.wikibooks.org/wiki/X86_Assembly/Shift_and_Rotate
+
+For Part4, I discussed the output results of the attack program with "Seohyun Park".
+

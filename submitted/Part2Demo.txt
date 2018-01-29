@@ -1,0 +1,80 @@
+Script started on Fri 24 Mar 2017 10:42:42 PM EDT
+hkocabas@js-156-93:~/assignment2/submitted$ as part2.s -o part2.o
+hkocabas@js-156-93:~/assignment2/submitted$ ld part2.o -o part2
+hkocabas@js-156-93:~/assignment2/submitted$ ./part2
+$ pwd
+/home/hkocabas/assignment2/submitted
+$ date
+Fri Mar 24 22:43:20 EDT 2017
+$ exit
+hkocabas@js-156-93:~/assignment2/submitted$ objdump -d part2
+
+part2:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000400078 <_start>:
+  400078:	55                   	push   %rbp
+  400079:	48 89 e5             	mov    %rsp,%rbp
+  40007c:	eb 30                	jmp    4000ae <data_items>
+
+000000000040007e <hop>:
+  40007e:	5b                   	pop    %rbx
+  40007f:	55                   	push   %rbp
+  400080:	48 89 e5             	mov    %rsp,%rbp
+  400083:	48 83 ec 10          	sub    $0x10,%rsp
+  400087:	48 31 d2             	xor    %rdx,%rdx
+  40008a:	48 89 5d f0          	mov    %rbx,-0x10(%rbp)
+  40008e:	48 89 55 f8          	mov    %rdx,-0x8(%rbp)
+  400092:	48 8d 75 f0          	lea    -0x10(%rbp),%rsi
+  400096:	48 8b 7d f0          	mov    -0x10(%rbp),%rdi
+  40009a:	48 31 c0             	xor    %rax,%rax
+  40009d:	b0 3b                	mov    $0x3b,%al
+  40009f:	0f 05                	syscall 
+  4000a1:	48 31 c0             	xor    %rax,%rax
+  4000a4:	b0 3c                	mov    $0x3c,%al
+  4000a6:	48 31 c9             	xor    %rcx,%rcx
+  4000a9:	48 89 cf             	mov    %rcx,%rdi
+  4000ac:	0f 05                	syscall 
+
+00000000004000ae <data_items>:
+  4000ae:	e8 cb ff ff ff       	callq  40007e <hop>
+  4000b3:	2f                   	(bad)  
+  4000b4:	62                   	(bad)  
+  4000b5:	69                   	.byte 0x69
+  4000b6:	6e                   	outsb  %ds:(%rsi),(%dx)
+  4000b7:	2f                   	(bad)  
+  4000b8:	73 68                	jae    400122 <data_items+0x74>
+	...
+hkocabas@js-156-93:~/assignment2/submitted$ gdb part2
+GNU gdb (Ubuntu 7.7.1-0ubuntu5~14.04.2) 7.7.1
+Copyright (C) 2014 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from part2...(no debugging symbols found)...done.
+(gdb) x/128xb _start
+0x400078 <_start>:	0x55	0x48	0x89	0xe5	0xeb	0x30	0x5b	0x55
+0x400080 <hop+2>:	0x48	0x89	0xe5	0x48	0x83	0xec	0x10	0x48
+0x400088 <hop+10>:	0x31	0xd2	0x48	0x89	0x5d	0xf0	0x48	0x89
+0x400090 <hop+18>:	0x55	0xf8	0x48	0x8d	0x75	0xf0	0x48	0x8b
+0x400098 <hop+26>:	0x7d	0xf0	0x48	0x31	0xc0	0xb0	0x3b	0x0f
+0x4000a0 <hop+34>:	0x05	0x48	0x31	0xc0	0xb0	0x3c	0x48	0x31
+0x4000a8 <hop+42>:	0xc9	0x48	0x89	0xcf	0x0f	0x05	0xe8	0xcb
+0x4000b0 <data_items+2>:	0xff	0xff	0xff	0x2f	0x62	0x69	0x6e	0x2f
+0x4000b8 <data_items+10>:	0x73	0x68	0x00	Cannot access memory at address 0x4000bb
+(gdb) quit
+hkocabas@js-156-93:~/assignment2/submitted$ exit
+exit
+
+Script done on Fri 24 Mar 2017 10:44:12 PM EDT

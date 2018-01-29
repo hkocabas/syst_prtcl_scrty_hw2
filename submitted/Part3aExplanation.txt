@@ -1,0 +1,39 @@
+First of all the Shell Code is copied into the Part3a.c file.
+
+At the first step, Part3a.c file was used to create executable file
+without any flags while I was compiling it.
+The result is successful because instead of the flags, the mprotect()
+lets us to reach the memory. In that way we dont need to use flags once
+we compile the .c file
+Compile Command:
+"gcc Part3c.c -o Part3"
+Run Command:
+"./Part3"
+
+
+Secondly, I commment out the mprotect() function and compile the Part3.c
+file as above commands. However, I could not open a shell cause' I have lost
+the authorization to write to memory.
+
+At the third step, I did not changed the code.
+In other words mprotect() function was still commented out.
+And I used flags when I recompiled the program.
+On the conrary with second step, this compilation runned as first step
+and I could reached the shell.
+That shows us, reaching and using memory is the essential step to
+execute our shell code on the stack.
+Compile Command:
+"gcc -z -fno-stack-protector Part3.c -o Part3"
+Run Command:
+"./Part3"
+
+mprotect can be used in this function to let access to memory
+with different authorizations:
+"
+PROT_NONE	:The memory cannot be accessed at all.
+PROT_RED	:The memory can be read.
+PROT_WRITE	:The memory can be written to.
+PROT_EXEC	:The memory can contain executing code.
+"
+Source for the flags:
+http://www.tutorialspoint.com/unix_system_calls/mprotect.htm
